@@ -1,8 +1,8 @@
 from random import randint
 wordlist = []
-version = open('version.txt', 'r').read()
+version = open('version.txt', 'r').read() # importing version from txt file
 
-def wordlist_preparation():
+def wordlist_preparation(): # importing text files with game words and returning the list for current game
     animals_list = []
     clothes_list = []
     fruit_list = []
@@ -15,14 +15,15 @@ def wordlist_preparation():
     words_list = [animals_list, clothes_list, fruit_list]
     return words_list
 
-def word_random (wordlist):
+def word_random (wordlist): # picking and returning a random word and theme to play
     whole_list = wordlist
     random_list_index = randint(1,len(whole_list)-1)
     theme_list = whole_list[random_list_index]
     random_word_index = randint(1,len(theme_list)-1)
     rand_word = theme_list[random_word_index].lower()
 
-    if (len(rand_word) < 3):
+    while (len(rand_word) < 3):
+        random_word_index = randint(1,len(theme_list)-1)
         rand_word = theme_list[random_word_index].lower()
 
     if (random_list_index == 0):
@@ -34,16 +35,24 @@ def word_random (wordlist):
 
     return [rand_word, game_theme]
 
-def word_guessing (word, game_theme):
+def word_guessing (word, game_theme): # game script
     score = 0
     word_hidden = '*' * len(word)
-    letters_guessed = []
-    print("\n\n\n\n\n\n\n")
+
+    for i in range(len(word)): # showing space and dash characters if any appear
+        if (word[i] == '-'):
+            word_hidden = word_hidden[:i] + '-' + word_hidden[i+1:]
+        if (word[i] == ' '):
+            word_hidden = word_hidden[:i] + ' ' + word_hidden[i+1:]
+
+    letters_guessed = [] # list with letters already guessed
+    print(100*"\n")
     print('The theme is {}. Your word currently is {}!'.format(game_theme, word_hidden))
-    while (word_hidden.find('*') >= 0):
+
+    while (word_hidden.find('*') >= 0): # game runs until all the characters are revealed
         print("\nTell me a letter!\n")
         letter_input = input()
-        print("\n\n\n\n\n\n\n")
+        print(100*"\n")
         if (word.find(letter_input) >= 0) and (letter_input not in letters_guessed):
             for i in range(len(word)):
                 if (word[i] == letter_input):
@@ -54,11 +63,13 @@ def word_guessing (word, game_theme):
             score -= 100
             print("I'm sorry but there's no such a letter.")
             print("Your score has been decreased by 100 and is {} points now.".format(score))
+
         letters_guessed.append(letter_input)
         print("Your word currently is {}.".format(word_hidden))
-    print("\nCongradulations! You guessed the word - {}. Your score is {}!".format(word, score))
+    print(100*"\n")
+    print("Congradulations! You guessed the word - {}. Your score is {}!".format(word, score))
 
-def main():
+def main(): # main starting function
     print("Welcome to Polechudes {}!\n".format(version))
     while(True):
         print("Are you ready to play? (y/n)")
