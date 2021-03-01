@@ -4,11 +4,11 @@ import os, sys, time
 wordlist = []
 game_version = ''
 
-game_version_file = os.path.join(os.path.dirname(sys.executable), 'game_version.txt')
-animals_list_file = os.path.join(os.path.dirname(sys.executable), 'animals.txt')
-clothes_list_file = os.path.join(os.path.dirname(sys.executable), 'clothes.txt')
-fruit_list_file = os.path.join(os.path.dirname(sys.executable), 'fruit.txt')
-game_version = open(game_version_file, 'rb')
+game_version_file = 'game_version.txt'
+animals_list_file = 'animals.txt'
+clothes_list_file = 'clothes.txt'
+fruit_list_file = 'fruit.txt'
+game_version = open(game_version_file, 'r')
 
 with open('game_version.txt', 'r') as file: # importing version from txt file
     game_version = file.read() 
