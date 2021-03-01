@@ -13,7 +13,7 @@ It contains a Python script with the code itself and two .txt files with all wor
 ### version 0.3
 - added 3 categories (Animals, Clothes, Fruit) to help you guessing
 - improved scroing system
-- added more than 500 words
+- added more than 1000 words
 
 ## Running game
 To run Polechudes game, you need to download the folder and run the 'polechudes.exe' app located in "/dist" folder. Note that you can still run it with cmd command 'python polechudes.py' while in the "polechudes project" folder.
