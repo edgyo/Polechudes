@@ -1,7 +1,7 @@
 # Polechudes
 Polechudes Text Game is my second project on learning Python and GitHub.
 
-It contains a Python script with the code itself and two .txt files with all words and current game version.
+It contains a Python script with the code itself, four .txt files with all words and current game version, and an executable version of the game.
 
 ### version 0.5
 - Polechudes is now fully executable! 'Running game' section has been updated also.
