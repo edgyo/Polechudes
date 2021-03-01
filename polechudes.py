@@ -1,16 +1,27 @@
 from random import randint
+import os, sys, time
+
 wordlist = []
-version = open('version.txt', 'r').read() # importing version from txt file
+game_version = ''
+
+game_version_file = os.path.join(os.path.dirname(sys.executable), 'game_version.txt')
+animals_list_file = os.path.join(os.path.dirname(sys.executable), 'animals.txt')
+clothes_list_file = os.path.join(os.path.dirname(sys.executable), 'clothes.txt')
+fruit_list_file = os.path.join(os.path.dirname(sys.executable), 'fruit.txt')
+game_version = open(game_version_file, 'rb')
+
+with open('game_version.txt', 'r') as file: # importing version from txt file
+    game_version = file.read() 
 
 def wordlist_preparation(): # importing text files with game words and returning the list for current game
     animals_list = []
     clothes_list = []
     fruit_list = []
-    with open('animals.txt', 'r') as file:
+    with open(animals_list_file, 'r') as file:
         animals_list = file.read().split()
-    with open('clothes.txt', 'r') as file:
+    with open(clothes_list_file, 'r') as file:
         clothes_list = file.read().split()
-    with open('fruit.txt', 'r') as file:
+    with open(fruit_list_file, 'r') as file:
         fruit_list = file.read().split()
     words_list = [animals_list, clothes_list, fruit_list]
     return words_list
@@ -70,7 +81,7 @@ def word_guessing (word, game_theme): # game script
     print("Congradulations! You guessed the word - {}. Your score is {}!".format(word, score))
 
 def main(): # main starting function
-    print("Welcome to Polechudes {}!\n".format(version))
+    print("Welcome to Polechudes {}!\n".format(game_version))
     while(True):
         print("Are you ready to play? (y/n)")
         player_answer = input()
@@ -79,6 +90,7 @@ def main(): # main starting function
             word_guessing(word, theme)
         else:
             print("Thanks for playing!")
+            time.sleep(3)
             break
 
 main()
