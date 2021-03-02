@@ -18,21 +18,24 @@ game_version_file = 'game_version.txt'
 animals_list_file = 'animals.txt'
 clothes_list_file = 'clothes.txt'
 fruit_list_file = 'fruit.txt'
+furniture_list_file = 'furniture.txt'
+pirates_list_file = 'pirates.txt'
 
 with open(game_version_file, 'r') as file: # importing version from txt file
     game_version = file.read() 
 
 def wordlist_preparation(): # importing text files with game words and returning the list for current game
-    animals_list = []
-    clothes_list = []
-    fruit_list = []
     with open(animals_list_file, 'r') as file:
         animals_list = file.read().split()
     with open(clothes_list_file, 'r') as file:
         clothes_list = file.read().split()
     with open(fruit_list_file, 'r') as file:
         fruit_list = file.read().split()
-    words_list = [animals_list, clothes_list, fruit_list]
+    with open(furniture_list_file, 'r') as file:
+        furniture_list = file.read().split()
+    with open(pirates_list_file, 'r') as file:
+        pirates_list = file.read().split()
+    words_list = [animals_list, clothes_list, fruit_list, furniture_list, pirates_list]
     return words_list
 
 def word_random (wordlist): # picking and returning a random word and theme to play
@@ -52,6 +55,10 @@ def word_random (wordlist): # picking and returning a random word and theme to p
         game_theme = 'clothes'
     if (random_list_index == 2):
         game_theme = 'fruit'
+    if (random_list_index == 2):
+        game_theme = 'furniture'
+    if (random_list_index == 2):
+        game_theme = 'pirates'
 
     return [rand_word, game_theme]
 
