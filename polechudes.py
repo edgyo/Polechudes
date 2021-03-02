@@ -1,5 +1,15 @@
 from random import randint
+from os import system, name 
+from time import sleep 
 import os, sys, time
+
+def clear(): 
+    # for windows 
+    if name == 'nt': 
+        _ = system('cls') 
+    # for mac and linux(here, os.name is 'posix') 
+    else: 
+        _ = system('clear') 
 
 wordlist = []
 game_version = ''
@@ -8,9 +18,8 @@ game_version_file = 'game_version.txt'
 animals_list_file = 'animals.txt'
 clothes_list_file = 'clothes.txt'
 fruit_list_file = 'fruit.txt'
-game_version = open(game_version_file, 'r')
 
-with open('game_version.txt', 'r') as file: # importing version from txt file
+with open(game_version_file, 'r') as file: # importing version from txt file
     game_version = file.read() 
 
 def wordlist_preparation(): # importing text files with game words and returning the list for current game
@@ -63,6 +72,7 @@ def word_guessing (word, game_theme): # game script
     while (word_hidden.find('*') >= 0): # game runs until all the characters are revealed
         print("\nTell me a letter!\n")
         letter_input = input()
+        clear()
         print(100*"\n")
         if (word.find(letter_input) >= 0) and (letter_input not in letters_guessed):
             for i in range(len(word)):
@@ -76,12 +86,13 @@ def word_guessing (word, game_theme): # game script
             print("Your score has been decreased by 100 and is {} points now.".format(score))
 
         letters_guessed.append(letter_input)
-        print("Your word currently is {}.".format(word_hidden))
+        print("Theme: {}. Your word currently is {}.".format(game_theme, word_hidden))
     print(100*"\n")
     print("Congradulations! You guessed the word - {}. Your score is {}!".format(word, score))
 
 def main(): # main starting function
     print("Welcome to Polechudes {}!\n".format(game_version))
+    #print("Welcome to Polechudes!\n")
     while(True):
         print("Are you ready to play? (y/n)")
         player_answer = input()

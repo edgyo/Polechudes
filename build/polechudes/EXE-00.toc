@@ -1,5 +1,4 @@
-('C:\\Users\\fenix\\Desktop\\Dev\\Python\\polechudes '
- 'project\\dist\\polechudes.exe',
+('.\\polechudes.exe',
  True,
  False,
  False,
@@ -11,7 +10,7 @@
  True,
  'polechudes.pkg',
  [('PYZ-00.pyz',
-   'C:\\Users\\fenix\\Desktop\\Dev\\Python\\polechudes '
+   'C:\\Users\\fenix\\desktop\\dev\\python\\polechudes '
    'project\\build\\polechudes\\PYZ-00.pyz',
    'PYZ'),
   ('struct',
@@ -83,31 +82,31 @@
   ('_ctypes',
    'c:\\users\\fenix\\appdata\\local\\programs\\python\\python39\\DLLs\\_ctypes.pyd',
    'EXTENSION'),
-  ('libssl-1_1.dll',
-   'c:\\users\\fenix\\appdata\\local\\programs\\python\\python39\\DLLs\\libssl-1_1.dll',
-   'BINARY'),
   ('libcrypto-1_1.dll',
    'c:\\users\\fenix\\appdata\\local\\programs\\python\\python39\\DLLs\\libcrypto-1_1.dll',
+   'BINARY'),
+  ('libssl-1_1.dll',
+   'c:\\users\\fenix\\appdata\\local\\programs\\python\\python39\\DLLs\\libssl-1_1.dll',
    'BINARY'),
   ('libffi-7.dll',
    'c:\\users\\fenix\\appdata\\local\\programs\\python\\python39\\DLLs\\libffi-7.dll',
    'BINARY'),
   ('base_library.zip',
-   'C:\\Users\\fenix\\Desktop\\Dev\\Python\\polechudes '
+   'C:\\Users\\fenix\\desktop\\dev\\python\\polechudes '
    'project\\build\\polechudes\\base_library.zip',
    'DATA'),
   ('Include\\pyconfig.h',
    'c:\\users\\fenix\\appdata\\local\\programs\\python\\python39\\Include\\pyconfig.h',
    'DATA'),
   ('polechudes.exe.manifest',
-   'C:\\Users\\fenix\\Desktop\\Dev\\Python\\polechudes '
+   'C:\\Users\\fenix\\desktop\\dev\\python\\polechudes '
    'project\\build\\polechudes\\polechudes.exe.manifest',
    'BINARY'),
   ('pyi-windows-manifest-filename polechudes.exe.manifest', '', 'OPTION')],
  [],
  False,
  False,
- 1614616961,
+ 1614666317,
  [('run.exe',
    'c:\\users\\fenix\\appdata\\local\\programs\\python\\python39\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])

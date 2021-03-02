@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['polechudes.py'],
-             pathex=['C:\\Users\\fenix\\Desktop\\Dev\\Python\\polechudes project'],
+             pathex=['C:\\Users\\fenix\\desktop\\dev\\python\\polechudes project'],
              binaries=[],
              datas=[],
              hiddenimports=[],
